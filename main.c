@@ -12,9 +12,9 @@
 #include "calc.h"
 int main()
 {
-    complex_t a = {10,10};
-    complex_t b = {20,20};
-    complex_t c = {0,0};
+    complex_t a = {10.0,10.0};
+    complex_t b = {20.0,20.0};
+    complex_t c = {0.0,0.0};
 
     int n;
 
