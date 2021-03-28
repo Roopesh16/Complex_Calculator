@@ -1,11 +1,13 @@
 PROJ_NAME = Complex_Calculator
-TEST_PROJ_NAME = Test_$(PROJ_NAME)
 
 BUILD_DIR = Build
 
-SRC = calculator.c
+TEST_SRC = test_calculator.c\
+unity/unity.c
 
-INC = calc.h
+INC = -Iinc\
+-Iunity
+
 
 
 #To check if the OS is Windows or Linux and set the executable file extension and delete command accordingly
@@ -21,14 +23,7 @@ else
    endif
 endif
 
-all.exe : calculator.c main.c 
-	 gcc main.c calculator.c $(INC) -o all.exe
+all : 
+   gcc main.c calculator.c -o all
 
 run: all.exe
-
-
-
-clean:
-	$(RM) $(call FixPath,$(BUILD_DIR)/*)
-	make clean -C doc
-	rmdir $(BUILD_DIR) doc/html
